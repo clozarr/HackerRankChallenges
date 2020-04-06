@@ -1,5 +1,6 @@
 package com.clozarr.hackerrank.algorithms;
 
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -158,13 +159,33 @@ public class Warmup {
 		float porcentajePositivo = (float) totalPositivos / totalElementos;
 		float porcentajeNegativo = (float) totalNegativos / totalElementos;
 		float porcentajeCeros = (float) totalCeros / totalElementos;
-		
-	
-		
 
-		System.out.println(String.format("%.6f",porcentajePositivo));
-		System.out.println(String.format("%.6f",porcentajeNegativo));
-		System.out.println(String.format("%.6f",porcentajeCeros));
+		System.out.println(String.format("%.6f", porcentajePositivo));
+		System.out.println(String.format("%.6f", porcentajeNegativo));
+		System.out.println(String.format("%.6f", porcentajeCeros));
+	}
+
+	/**
+	 * <p>
+	 * Challenge: Arrays - DS
+	 * </p>
+	 * 
+	 * @see <a href=
+	 *      "https://www.hackerrank.com/challenges/plus-minus/problem">Arrays - DS
+	 *      </a>
+	 * @author clozarr
+	 **/
+	public static int[] reverseArray(int[] a) {
+
+		int output[] = new int[a.length];
+		int index = 0;
+
+		for (int i = a.length - 1; i >= 0; i--) {
+
+			output[index++] = a[i];
+		}
+
+		return output;
 	}
 
 }

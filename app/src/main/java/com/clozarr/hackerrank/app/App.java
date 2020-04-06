@@ -1,5 +1,7 @@
 package com.clozarr.hackerrank.app;
 
+import java.util.Arrays;
+
 import com.clozarr.hackerrank.algorithms.Warmup;
 import com.clozarr.hackerrank.interview.ArraysChallenges;
 
@@ -14,6 +16,9 @@ public class App {
 
 		int [] arr = {-4, 3, -9, 0, 4, 1 };
 	    Warmup.plusMinus(arr);
+	    int [] r =  Warmup.reverseArray(arr);
+	    
+	    Arrays.stream(r).forEach(System.out::println);
 
 		
 		 int queries[][] = {{2,6,8},{3,5,7},{1,8,1},{5,9,15}};
