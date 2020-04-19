@@ -7,6 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+
 /**
  * 
  **/
@@ -192,10 +193,6 @@ public class Warmup {
 	}
 
 	/**
-	 * <p>
-	 * Challenge: 2D Array - DS
-	 * </p>
-	 * 
 	 * @see <a href= "https://www.hackerrank.com/challenges/2d-array/problem">2D
 	 *      Array - DS </a>
 	 * @author clozarr
@@ -215,12 +212,45 @@ public class Warmup {
 
 					mayor = suma;
 				}
-
 			}
 
 		}
 
 		return mayor;
+
+	}
+
+	/**
+	 * Challenge: Left Rotation </p>
+	 * 
+	 * @see <a href=
+	 * "https://www.hackerrank.com/challenges/array-left-rotation/problem">Left
+	 * Rotation </a>
+	 * 
+	 * @author clozarr
+	 **/
+
+	public static void leftRotation(int rotationNumber, int[] arr) {
+
+		StringBuilder response = new StringBuilder();
+		int count = 0;
+
+		for (int i = 0; i < arr.length; i++) {
+
+			if (rotationNumber < arr.length) {
+
+				response.append(arr[rotationNumber]).append(" ");
+				rotationNumber++;
+			} else {
+
+				response.append(arr[count]).append(" ");
+				count++;
+
+			}
+
+		}
+
+		System.out.println(response.toString().trim());
 
 	}
 
@@ -275,6 +305,40 @@ public class Warmup {
 		}
 
 		return response;
+
+	}
+
+	/**
+	 * Challenge: Sparse Arrays </p>
+	 * 
+	 * @see <a href=
+	 * "https://www.hackerrank.com/challenges/sparse-arrays/problem">Sparse
+	 * Arrays</a>
+	 * 
+	 * @author clozarr
+	 **/
+	public static int[] matchingStrings(String[] strings, String[] queries) {
+
+		int response[] = new int[queries.length];
+		Map<String, Integer> map = new HashMap<String, Integer>();
+
+		for (int i = 0; i < strings.length; i++) {
+
+			if (!map.containsKey(strings[i]))
+				map.put(strings[i], 1);
+			else
+				map.put(strings[i], map.get(strings[i]) + 1);
+
+		}
+
+		for (int i = 0; i < queries.length; i++) {
+
+			if (map.containsKey(queries[i]))
+				response[i] = map.get(queries[i]);
+		}
+
+		return response;
+
 	}
 
 }
