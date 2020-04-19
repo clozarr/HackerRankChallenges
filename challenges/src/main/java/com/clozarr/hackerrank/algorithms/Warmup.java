@@ -1,8 +1,11 @@
 package com.clozarr.hackerrank.algorithms;
 
-
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 
@@ -171,7 +174,7 @@ public class Warmup {
 	 * </p>
 	 * 
 	 * @see <a href=
-	 *      "https://www.hackerrank.com/challenges/plus-minus/problem">Arrays - DS
+	 *      "https://www.hackerrank.com/challenges/arrays-ds/problem">Arrays - DS
 	 *      </a>
 	 * @author clozarr
 	 **/
@@ -186,6 +189,92 @@ public class Warmup {
 		}
 
 		return output;
+	}
+
+	/**
+	 * <p>
+	 * Challenge: 2D Array - DS
+	 * </p>
+	 * 
+	 * @see <a href= "https://www.hackerrank.com/challenges/2d-array/problem">2D
+	 *      Array - DS </a>
+	 * @author clozarr
+	 **/
+	public static int hourglassSum(int[][] arr) {
+
+		int suma = 0;
+		int mayor = Integer.MIN_VALUE;
+
+		for (int i = 0; i < arr.length - 2; i++) {
+			for (int j = 0; j < arr[0].length - 2; j++) {
+
+				suma = arr[i][j] + arr[i][j + 1] + arr[i][j + 2] + arr[i + 1][j + 1] + arr[i + 2][j] + arr[i + 2][j + 1]
+						+ arr[i + 2][j + 2];
+
+				if (suma > mayor) {
+
+					mayor = suma;
+				}
+
+			}
+
+		}
+
+		return mayor;
+
+	}
+
+	/**
+	 * <p>
+	 * Challenge: Dynamic Array
+	 * </p>
+	 * 
+	 * @see <a href=
+	 *      "https://www.hackerrank.com/challenges/dynamic-array/problem">Dynamic
+	 *      Array</a>
+	 * @author clozarr
+	 **/
+	public static List<Integer> dynamicArray(int n, List<List<Integer>> queries) {
+		// Write your code here
+
+		int lastAnswer = 0;
+		int queryType = 0;
+		int x = 0;
+		int y = 0;
+		int seq = 0;
+		int index = 0;
+
+		List<Integer> response = new ArrayList<Integer>();
+		Map<Integer, List<Integer>> seqList = new HashMap<Integer, List<Integer>>();
+
+		for (Iterator<List<Integer>> iterator = queries.iterator(); iterator.hasNext();) {
+			List<Integer> list = iterator.next();
+
+			queryType = list.get(0);
+			x = list.get(1);
+			y = list.get(2);
+			seq = ((x ^ lastAnswer) % n);
+
+			switch (queryType) {
+
+			case 1:
+				seqList.putIfAbsent(seq, new ArrayList<Integer>());
+				seqList.get(seq).add(y);
+				break;
+			case 2:
+				seqList.putIfAbsent(seq, new ArrayList<Integer>());
+				index = y % seqList.get(seq).size();
+				lastAnswer = seqList.get(seq).get(index);
+				response.add(lastAnswer);
+				break;
+
+			default:
+				break;
+			}
+
+		}
+
+		return response;
 	}
 
 }
