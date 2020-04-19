@@ -1,11 +1,7 @@
 package com.clozarr.hackerrank.algorithms;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
+
 
 
 /**
@@ -13,6 +9,20 @@ import java.util.Map;
  **/
 public class Warmup {
 
+	/**
+	 * <p>
+	 * Challenge: Solve me first
+	 * </p>
+	 * 
+	 * @see <a href=
+	 *      "https://www.hackerrank.com/challenges/solve-me-first/problem">Solve Me First</a>
+	 * @author clozarr
+	 **/
+	public static int solveMeFirst(int a, int b) {
+      	// Hint: Type return a+b; below 
+      return a + b;
+   }
+	
 	/**
 	 * <p>
 	 * Challenge: Simple Array Sum
@@ -25,12 +35,12 @@ public class Warmup {
 	 **/
 	public static int simpleArraySum(int[] ar) {
 
-		int suma = 0;
+		int sum = 0;
 		for (int element : ar) {
 
-			suma += element;
+			sum += element;
 		}
-		return suma;
+		return sum;
 	}
 
 	/**
@@ -82,9 +92,9 @@ public class Warmup {
 	 **/
 	public static int diagonalDifference(List<List<Integer>> arr) {
 
-		int resta = 0;
-		int sumaDiagonalprincipal = 0;
-		int sumaDiagonalSecundaria = 0;
+		int subtraction = 0;
+		int mainDiagonalSum = 0;
+		int secondaryDiagonalSum = 0;
 
 		for (int i = 0; i < arr.size(); i++) {
 
@@ -92,24 +102,24 @@ public class Warmup {
 
 			for (int j = 0; j < subArray.size(); j++) {
 
-				// Sumar la diagonal principal
+				// add main diagonal
 				if (i == j) {
 
-					sumaDiagonalprincipal += subArray.get(j);
+					mainDiagonalSum += subArray.get(j);
 
 				}
 
-				// Sumar la diagonal secundaria
+				// add secondary diagonal
 				if ((i + j) == (subArray.size() - 1)) {
 
-					sumaDiagonalSecundaria += subArray.get(j);
+					secondaryDiagonalSum += subArray.get(j);
 				}
 			}
 
 		}
 
-		resta = Math.abs(sumaDiagonalprincipal - sumaDiagonalSecundaria);
-		return resta;
+		subtraction = Math.abs(mainDiagonalSum - secondaryDiagonalSum);
+		return subtraction;
 
 	}
 
@@ -124,12 +134,12 @@ public class Warmup {
 	 **/
 	public static long aVeryBigSum(long[] ar) {
 
-		long suma = 0;
+		long sum = 0;
 
 		for (long element : ar)
-			suma += element;
+			sum += element;
 
-		return suma;
+		return sum;
 
 	}
 
@@ -144,201 +154,29 @@ public class Warmup {
 	 **/
 	public static void plusMinus(int[] arr) {
 
-		int totalPositivos = 0;
-		int totalNegativos = 0;
-		int totalCeros = 0;
-		int totalElementos = arr.length;
+		int positives = 0;
+		int negatives = 0;
+		int zeros = 0;
+		int totalItems = arr.length;
 
 		for (int element : arr) {
 
 			if (element == 0)
-				totalCeros++;
+				zeros++;
 			if (element < 0)
-				totalNegativos++;
+				negatives++;
 			if (element > 0)
-				totalPositivos++;
+				positives++;
 
 		}
 
-		float porcentajePositivo = (float) totalPositivos / totalElementos;
-		float porcentajeNegativo = (float) totalNegativos / totalElementos;
-		float porcentajeCeros = (float) totalCeros / totalElementos;
+		float positivePercent = (float) positives / totalItems;
+		float negativepercent = (float) negatives / totalItems;
+		float zerosPercent = (float) zeros / totalItems;
 
-		System.out.println(String.format("%.6f", porcentajePositivo));
-		System.out.println(String.format("%.6f", porcentajeNegativo));
-		System.out.println(String.format("%.6f", porcentajeCeros));
+		System.out.println(String.format("%.6f", positivePercent));
+		System.out.println(String.format("%.6f", negativepercent));
+		System.out.println(String.format("%.6f", zerosPercent));
 	}
-
-	/**
-	 * <p>
-	 * Challenge: Arrays - DS
-	 * </p>
-	 * 
-	 * @see <a href=
-	 *      "https://www.hackerrank.com/challenges/arrays-ds/problem">Arrays - DS
-	 *      </a>
-	 * @author clozarr
-	 **/
-	public static int[] reverseArray(int[] a) {
-
-		int output[] = new int[a.length];
-		int index = 0;
-
-		for (int i = a.length - 1; i >= 0; i--) {
-
-			output[index++] = a[i];
-		}
-
-		return output;
-	}
-
-	/**
-	 * @see <a href= "https://www.hackerrank.com/challenges/2d-array/problem">2D
-	 *      Array - DS </a>
-	 * @author clozarr
-	 **/
-	public static int hourglassSum(int[][] arr) {
-
-		int suma = 0;
-		int mayor = Integer.MIN_VALUE;
-
-		for (int i = 0; i < arr.length - 2; i++) {
-			for (int j = 0; j < arr[0].length - 2; j++) {
-
-				suma = arr[i][j] + arr[i][j + 1] + arr[i][j + 2] + arr[i + 1][j + 1] + arr[i + 2][j] + arr[i + 2][j + 1]
-						+ arr[i + 2][j + 2];
-
-				if (suma > mayor) {
-
-					mayor = suma;
-				}
-			}
-
-		}
-
-		return mayor;
-
-	}
-
-	/**
-	 * Challenge: Left Rotation </p>
-	 * 
-	 * @see <a href=
-	 * "https://www.hackerrank.com/challenges/array-left-rotation/problem">Left
-	 * Rotation </a>
-	 * 
-	 * @author clozarr
-	 **/
-
-	public static void leftRotation(int rotationNumber, int[] arr) {
-
-		StringBuilder response = new StringBuilder();
-		int count = 0;
-
-		for (int i = 0; i < arr.length; i++) {
-
-			if (rotationNumber < arr.length) {
-
-				response.append(arr[rotationNumber]).append(" ");
-				rotationNumber++;
-			} else {
-
-				response.append(arr[count]).append(" ");
-				count++;
-
-			}
-
-		}
-
-		System.out.println(response.toString().trim());
-
-	}
-
-	/**
-	 * <p>
-	 * Challenge: Dynamic Array
-	 * </p>
-	 * 
-	 * @see <a href=
-	 *      "https://www.hackerrank.com/challenges/dynamic-array/problem">Dynamic
-	 *      Array</a>
-	 * @author clozarr
-	 **/
-	public static List<Integer> dynamicArray(int n, List<List<Integer>> queries) {
-		// Write your code here
-
-		int lastAnswer = 0;
-		int queryType = 0;
-		int x = 0;
-		int y = 0;
-		int seq = 0;
-		int index = 0;
-
-		List<Integer> response = new ArrayList<Integer>();
-		Map<Integer, List<Integer>> seqList = new HashMap<Integer, List<Integer>>();
-
-		for (Iterator<List<Integer>> iterator = queries.iterator(); iterator.hasNext();) {
-			List<Integer> list = iterator.next();
-
-			queryType = list.get(0);
-			x = list.get(1);
-			y = list.get(2);
-			seq = ((x ^ lastAnswer) % n);
-
-			switch (queryType) {
-
-			case 1:
-				seqList.putIfAbsent(seq, new ArrayList<Integer>());
-				seqList.get(seq).add(y);
-				break;
-			case 2:
-				seqList.putIfAbsent(seq, new ArrayList<Integer>());
-				index = y % seqList.get(seq).size();
-				lastAnswer = seqList.get(seq).get(index);
-				response.add(lastAnswer);
-				break;
-
-			default:
-				break;
-			}
-
-		}
-
-		return response;
-
-	}
-
-	/**
-	 * Challenge: Sparse Arrays </p>
-	 * 
-	 * @see <a href=
-	 * "https://www.hackerrank.com/challenges/sparse-arrays/problem">Sparse
-	 * Arrays</a>
-	 * 
-	 * @author clozarr
-	 **/
-	public static int[] matchingStrings(String[] strings, String[] queries) {
-
-		int response[] = new int[queries.length];
-		Map<String, Integer> map = new HashMap<String, Integer>();
-
-		for (int i = 0; i < strings.length; i++) {
-
-			if (!map.containsKey(strings[i]))
-				map.put(strings[i], 1);
-			else
-				map.put(strings[i], map.get(strings[i]) + 1);
-
-		}
-
-		for (int i = 0; i < queries.length; i++) {
-
-			if (map.containsKey(queries[i]))
-				response[i] = map.get(queries[i]);
-		}
-
-		return response;
-
-	}
-
+	
 }

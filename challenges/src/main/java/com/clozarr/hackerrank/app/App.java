@@ -2,7 +2,7 @@ package com.clozarr.hackerrank.app;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.clozarr.hackerrank.algorithms.Warmup;
+import com.clozarr.hackerrank.datastructures.Arrays;
 
 /**
  * Hello world!
@@ -74,7 +74,7 @@ public class App {
 		queries.add(d);
 		queries.add(e);
 		
-		List<Integer> r = Warmup.dynamicArray(2, queries);
+		List<Integer> r = Arrays.dynamicArray(2, queries);
 		r.stream().forEach(System.out::println);
 		
 	
