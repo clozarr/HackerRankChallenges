@@ -373,10 +373,34 @@ public class ThirtyDaysOfCode {
 			testScores[i] = scan.nextInt();
 		}
 		scan.close();
-		/** @see {@link Student}} */
+		/** @see {@link Student} */
 		Student s = new Student(firstName, lastName, id, testScores);
 		s.printPerson();
 		System.out.println("Grade: " + s.calculate());
 
+	}
+	
+	/**
+	 * <p>
+	 * Challenge Day 13: Abstract Classes
+	 * </p>
+	 * 
+	 * @see <a href= "https://www.hackerrank.com/challenges/30-abstract-classes/problem">
+	 *      Abstract Classes</a>
+	 *      
+	 * @author clozarr
+	 **/
+	public static void abstractClass() {
+		
+		 Scanner scanner = new Scanner(System.in);
+	        String title = scanner.nextLine();
+	        String author = scanner.nextLine();
+	        int price = scanner.nextInt();
+	        scanner.close();
+	        
+	        /** @see {@link MyBook} */
+	        Book book = new MyBook(title, author, price);
+	        book.display();
+		
 	}
 }
