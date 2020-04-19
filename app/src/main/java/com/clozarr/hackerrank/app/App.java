@@ -27,6 +27,9 @@ public class App {
 		long v = ArraysChallenges.arrayManipulation(sizeOutputArray, queries);
 	    System.out.println("Max: " + v);
 
+	    
+	    int array [] = {1,2,3,4,5};
+	    Warmup.leftRotation(3, array);
 		
 	}
 }

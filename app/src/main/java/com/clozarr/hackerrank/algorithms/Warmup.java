@@ -1,8 +1,11 @@
 package com.clozarr.hackerrank.algorithms;
 
-
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.IntStream;
 
 /**
  * 
@@ -171,7 +174,7 @@ public class Warmup {
 	 * </p>
 	 * 
 	 * @see <a href=
-	 *      "https://www.hackerrank.com/challenges/plus-minus/problem">Arrays - DS
+	 *      "https://www.hackerrank.com/challenges/arrays-ds/problem">Arrays - DS
 	 *      </a>
 	 * @author clozarr
 	 **/
@@ -186,6 +189,74 @@ public class Warmup {
 		}
 
 		return output;
+	}
+
+	/**
+	 * <p>
+	 * Challenge: Left Rotation
+	 * </p>
+	 * 
+	 * @see <a href=
+	 *      "https://www.hackerrank.com/challenges/array-left-rotation/problem">Left
+	 *      Rotation </a>
+	 * @author clozarr
+	 **/
+	public static void leftRotation(int rotationNumber, int[] arr) {
+
+		StringBuilder response = new StringBuilder();
+		int count = 0;
+
+		for (int i = 0; i < arr.length; i++) {
+
+			if (rotationNumber < arr.length) {
+
+				response.append(arr[rotationNumber]).append(" ");
+				rotationNumber++;
+			} else {
+
+				response.append(arr[count]).append(" ");
+				count++;
+			}
+
+		}
+
+		System.out.println(response.toString().trim());
+
+	}
+
+	/**
+	 * <p>
+	 * Challenge: Sparse Arrays
+	 * </p>
+	 * 
+	 * @see <a href=
+	 *      "https://www.hackerrank.com/challenges/sparse-arrays/problem">Sparse
+	 *      Arrays</a>
+	 * @author clozarr
+	 **/
+	public static int[] matchingStrings(String[] strings, String[] queries) {
+
+		int response[] = new int[queries.length];
+		Map<String, Integer> map = new HashMap<String, Integer>();
+
+
+		for (int i = 0; i < strings.length; i++) {
+
+			if (!map.containsKey(strings[i]))
+				map.put(strings[i], 1);
+			else
+				map.put(strings[i], map.get(strings[i]) + 1);
+
+		}
+		
+		for (int i = 0; i < queries.length; i++) {
+			
+			if(map.containsKey(queries[i]))
+				response[i] = map.get(queries[i]);
+		}
+
+		return response;
+
 	}
 
 }
