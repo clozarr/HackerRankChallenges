@@ -12,4 +12,6 @@ buildNumber.properties
 /.metadata/
 app/.classpath
 app/.settings/org.eclipse.jdt.core.prefs
+challenges/.classpath
+challenges/.settings/org.eclipse.jdt.core.prefs
 
