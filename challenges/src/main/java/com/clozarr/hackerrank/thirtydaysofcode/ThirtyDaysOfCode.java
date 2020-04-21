@@ -403,4 +403,32 @@ public class ThirtyDaysOfCode {
 	        book.display();
 		
 	}
+	
+	/**
+	 * <p>
+	 * Challenge Day 14: Scope
+	 * </p>
+	 * 
+	 * @see <a href= "https://www.hackerrank.com/challenges/30-scope/problem">
+	 *      Scope</a>
+	 *      
+	 * @author clozarr
+	 **/
+	public static void scope() {
+		
+		 Scanner sc = new Scanner(System.in);
+	        int n = sc.nextInt();
+	        int[] a = new int[n];
+	        for (int i = 0; i < n; i++) {
+	            a[i] = sc.nextInt();
+	        }
+	        sc.close();
+
+	        /** @see {@link Difference} */
+	        Difference difference = new Difference(a);
+
+	        difference.computeDifference();
+
+	        System.out.print(difference.maximumDifference);
+	}
 }
