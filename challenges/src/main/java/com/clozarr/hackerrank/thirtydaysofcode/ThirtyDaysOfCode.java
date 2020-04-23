@@ -431,4 +431,57 @@ public class ThirtyDaysOfCode {
 
 	        System.out.print(difference.maximumDifference);
 	}
+	
+	/**
+	* <p>
+	* Challenge Day 15: Linked List
+	* </p>
+	* 
+	* @see <a href= "https://www.hackerrank.com/challenges/30-linked-list/problem">
+	*      Linked List</a>
+	*      
+	* @see {@link Node}
+    *
+	* @author clozarr
+	**/
+	public static void linkedList() {
+		
+		Scanner sc = new Scanner(System.in);
+        Node head = null;
+        int N = sc.nextInt();
+
+        while(N-- > 0) {
+            int ele = sc.nextInt();
+            head = Solution.insert(head,ele);
+        }
+        Solution.display(head);
+        sc.close();
+		
+	}
+	
+	
+	/**
+	* <p>
+	* Challenge Day 16: Exceptions
+	* </p>
+	* 
+	* @see <a href= "https://www.hackerrank.com/challenges/30-exceptions-string-to-integer/problem">
+	*      Exceptions</a>
+	*      
+    *
+	* @author clozarr
+	**/
+	public static void exceptions(String n) {
+		
+		try {
+			
+		 int number = Integer.parseInt(n);
+		 System.out.println(number);
+			
+		}catch (NumberFormatException e) {
+			
+			System.out.println("Bad String");
+		}
+		
+	}
 }
