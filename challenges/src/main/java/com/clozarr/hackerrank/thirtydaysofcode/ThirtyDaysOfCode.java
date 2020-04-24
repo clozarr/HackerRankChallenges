@@ -484,4 +484,38 @@ public class ThirtyDaysOfCode {
 		}
 		
 	}
+	
+	/**
+	* <p>
+	* Challenge Day 17: More Exceptions
+	* </p>
+	* 
+	* @see <a href= "https://www.hackerrank.com/challenges/30-more-exceptions/problem">
+	*      More Exceptions</a>
+	*      
+	*
+	* @author clozarr
+	**/
+	public static void moreException() {
+		
+		 Scanner in = new Scanner(System.in);
+	        int t = in.nextInt();
+	        while (t-- > 0) {
+	        
+	            int n = in.nextInt();
+	            int p = in.nextInt();
+	            
+	            /** @see {@link Calculator} */
+	            Calculator myCalculator = new Calculator();
+	            try {
+	                int ans = myCalculator.power(n, p);
+	                System.out.println(ans);
+	            }
+	            catch (Exception e) {
+	                System.out.println(e.getMessage());
+	            }
+	        }
+	        in.close();
+		
+	}
 }
