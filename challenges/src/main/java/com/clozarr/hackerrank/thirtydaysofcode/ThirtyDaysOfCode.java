@@ -358,7 +358,7 @@ public class ThirtyDaysOfCode {
 	 * 
 	 * @see <a href= "https://www.hackerrank.com/challenges/30-inheritance/problem">
 	 *      Inheritance</a>
-	 *      
+	 * 
 	 * @author clozarr
 	 **/
 	public static void inheritance() {
@@ -379,31 +379,32 @@ public class ThirtyDaysOfCode {
 		System.out.println("Grade: " + s.calculate());
 
 	}
-	
+
 	/**
 	 * <p>
 	 * Challenge Day 13: Abstract Classes
 	 * </p>
 	 * 
-	 * @see <a href= "https://www.hackerrank.com/challenges/30-abstract-classes/problem">
+	 * @see <a href=
+	 *      "https://www.hackerrank.com/challenges/30-abstract-classes/problem">
 	 *      Abstract Classes</a>
-	 *      
+	 * 
 	 * @author clozarr
 	 **/
 	public static void abstractClass() {
-		
-		 Scanner scanner = new Scanner(System.in);
-	        String title = scanner.nextLine();
-	        String author = scanner.nextLine();
-	        int price = scanner.nextInt();
-	        scanner.close();
-	        
-	        /** @see {@link MyBook} */
-	        Book book = new MyBook(title, author, price);
-	        book.display();
-		
+
+		Scanner scanner = new Scanner(System.in);
+		String title = scanner.nextLine();
+		String author = scanner.nextLine();
+		int price = scanner.nextInt();
+		scanner.close();
+
+		/** @see {@link MyBook} */
+		Book book = new MyBook(title, author, price);
+		book.display();
+
 	}
-	
+
 	/**
 	 * <p>
 	 * Challenge Day 14: Scope
@@ -411,111 +412,154 @@ public class ThirtyDaysOfCode {
 	 * 
 	 * @see <a href= "https://www.hackerrank.com/challenges/30-scope/problem">
 	 *      Scope</a>
-	 *      
+	 * 
 	 * @author clozarr
 	 **/
 	public static void scope() {
-		
-		 Scanner sc = new Scanner(System.in);
-	        int n = sc.nextInt();
-	        int[] a = new int[n];
-	        for (int i = 0; i < n; i++) {
-	            a[i] = sc.nextInt();
-	        }
-	        sc.close();
 
-	        /** @see {@link Difference} */
-	        Difference difference = new Difference(a);
-
-	        difference.computeDifference();
-
-	        System.out.print(difference.maximumDifference);
-	}
-	
-	/**
-	* <p>
-	* Challenge Day 15: Linked List
-	* </p>
-	* 
-	* @see <a href= "https://www.hackerrank.com/challenges/30-linked-list/problem">
-	*      Linked List</a>
-	*      
-	* @see {@link Node}
-    *
-	* @author clozarr
-	**/
-	public static void linkedList() {
-		
 		Scanner sc = new Scanner(System.in);
-        Node head = null;
-        int N = sc.nextInt();
+		int n = sc.nextInt();
+		int[] a = new int[n];
+		for (int i = 0; i < n; i++) {
+			a[i] = sc.nextInt();
+		}
+		sc.close();
 
-        while(N-- > 0) {
-            int ele = sc.nextInt();
-            head = Solution.insert(head,ele);
-        }
-        Solution.display(head);
-        sc.close();
-		
+		/** @see {@link Difference} */
+		Difference difference = new Difference(a);
+
+		difference.computeDifference();
+
+		System.out.print(difference.maximumDifference);
 	}
-	
-	
+
 	/**
-	* <p>
-	* Challenge Day 16: Exceptions
-	* </p>
-	* 
-	* @see <a href= "https://www.hackerrank.com/challenges/30-exceptions-string-to-integer/problem">
-	*      Exceptions</a>
-	*      
-    *
-	* @author clozarr
-	**/
+	 * <p>
+	 * Challenge Day 15: Linked List
+	 * </p>
+	 * 
+	 * @see <a href= "https://www.hackerrank.com/challenges/30-linked-list/problem">
+	 *      Linked List</a>
+	 * 
+	 * @see {@link Node}
+	 *
+	 * @author clozarr
+	 **/
+	public static void linkedList() {
+
+		Scanner sc = new Scanner(System.in);
+		Node head = null;
+		int N = sc.nextInt();
+
+		while (N-- > 0) {
+			int ele = sc.nextInt();
+			head = Solution.insert(head, ele);
+		}
+		Solution.display(head);
+		sc.close();
+
+	}
+
+	/**
+	 * <p>
+	 * Challenge Day 16: Exceptions
+	 * </p>
+	 * 
+	 * @see <a href=
+	 *      "https://www.hackerrank.com/challenges/30-exceptions-string-to-integer/problem">
+	 *      Exceptions</a>
+	 * 
+	 *
+	 * @author clozarr
+	 **/
 	public static void exceptions(String n) {
-		
+
 		try {
-			
-		 int number = Integer.parseInt(n);
-		 System.out.println(number);
-			
-		}catch (NumberFormatException e) {
-			
+
+			int number = Integer.parseInt(n);
+			System.out.println(number);
+
+		} catch (NumberFormatException e) {
+
 			System.out.println("Bad String");
 		}
-		
+
 	}
-	
+
+	/**
+	 * <p>
+	 * Challenge Day 17: More Exceptions
+	 * </p>
+	 * 
+	 * @see <a href=
+	 *      "https://www.hackerrank.com/challenges/30-more-exceptions/problem"> More
+	 *      Exceptions</a>
+	 * 
+	 *
+	 * @author clozarr
+	 **/
+	public static void moreException() {
+
+		Scanner in = new Scanner(System.in);
+		int t = in.nextInt();
+		while (t-- > 0) {
+
+			int n = in.nextInt();
+			int p = in.nextInt();
+
+			/** @see {@link Calculator} */
+			Calculator myCalculator = new Calculator();
+			try {
+				int ans = myCalculator.power(n, p);
+				System.out.println(ans);
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+		}
+		in.close();
+
+	}
+
 	/**
 	* <p>
-	* Challenge Day 17: More Exceptions
+	* Challenge Day 18: Queues and Stacks
 	* </p>
 	* 
-	* @see <a href= "https://www.hackerrank.com/challenges/30-more-exceptions/problem">
-	*      More Exceptions</a>
+	* @see <a href= "https://www.hackerrank.com/challenges/30-queues-stacks/problem">
+	*      Queues and Stacks</a>
 	*      
 	*
 	* @author clozarr
 	**/
-	public static void moreException() {
-		
-		 Scanner in = new Scanner(System.in);
-	        int t = in.nextInt();
-	        while (t-- > 0) {
-	        
-	            int n = in.nextInt();
-	            int p = in.nextInt();
-	            
-	            /** @see {@link Calculator} */
-	            Calculator myCalculator = new Calculator();
-	            try {
-	                int ans = myCalculator.power(n, p);
-	                System.out.println(ans);
-	            }
-	            catch (Exception e) {
-	                System.out.println(e.getMessage());
-	            }
-	        }
-	        in.close();
-		
+	public static void stacksAndQueues() {
+
+		Scanner scan = new Scanner(System.in);
+		String input = scan.nextLine();
+		scan.close();
+
+		// Convert input String to an array of characters:
+		char[] s = input.toCharArray();
+
+		// Create a Solution object:
+		StacksAndQueues p = new StacksAndQueues();
+
+		// Enqueue/Push all chars to their respective data structures:
+		for (char c : s) {
+			p.pushCharacter(c);
+			p.enqueueCharacter(c);
+		}
+
+		// Pop/Dequeue the chars at the head of both data structures and compare them:
+		boolean isPalindrome = true;
+		for (int i = 0; i < s.length / 2; i++) {
+			if (p.popCharacter() != p.dequeueCharacter()) {
+				isPalindrome = false;
+				break;
+			}
+		}
+
+		// Finally, print whether string s is palindrome or not.
+		System.out.println("The word, " + input + ", is " + ((!isPalindrome) ? "not a palindrome." : "a palindrome."));
+
 	}
 }
