@@ -633,6 +633,44 @@ public class ThirtyDaysOfCode {
 		System.out.println("Array is sorted in " + numberOfSwaps + " swaps.");
 		System.out.println("First Element: " + a[0]);
 		System.out.println("Last Element: " + a[n - 1]);
+		in.close();
+	}
+
+	/**
+	 * <p>
+	 * Challenge Day 21: Generics
+	 * </p>
+	 * 
+	 * @see <a href= "https://www.hackerrank.com/challenges/30-generics/problem">
+	 *      Generics</a>
+	 * 
+	 *
+	 * @author clozarr
+	 **/
+	public static void generics() {
+
+		Scanner scanner = new Scanner(System.in);
+		int n = scanner.nextInt();
+		Integer[] intArray = new Integer[n];
+		for (int i = 0; i < n; i++) {
+			intArray[i] = scanner.nextInt();
+		}
+
+		n = scanner.nextInt();
+		String[] stringArray = new String[n];
+		for (int i = 0; i < n; i++) {
+			stringArray[i] = scanner.next();
+		}
+
+		/** @see {@link Printer} */
+		Printer<Integer> intPrinter = new Printer<Integer>();
+		Printer<String> stringPrinter = new Printer<String>();
+		intPrinter.printArray(intArray);
+		stringPrinter.printArray(stringArray);
+		if (Printer.class.getDeclaredMethods().length > 1) {
+			System.out.println("The Printer class should only have 1 method named printArray.");
+		}
+		scanner.close();
 
 	}
 
