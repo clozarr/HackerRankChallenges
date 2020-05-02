@@ -674,4 +674,30 @@ public class ThirtyDaysOfCode {
 
 	}
 
+	/**
+	 * <p>
+	 * Challenge Day 22:  Binary Search Trees
+	 * </p>
+	 * 
+	 * @see <a href= "https://www.hackerrank.com/challenges/30-binary-search-trees/problem">
+	 *       Binary Search Trees</a>
+	 * 
+	 *
+	 * @author clozarr
+	 **/
+	public static void tree() {
+
+		Scanner sc = new Scanner(System.in);
+		int T = sc.nextInt();
+		/** @see {@Tree @NodeTree} */
+		NodeTree root = null;
+		while (T-- > 0) {
+			int data = sc.nextInt();
+			root = Tree.insert(root, data);
+		}
+		int height = Tree.getHeight(root);
+		System.out.println(height);
+        sc.close();
+	}
+
 }
