@@ -689,15 +689,42 @@ public class ThirtyDaysOfCode {
 
 		Scanner sc = new Scanner(System.in);
 		int T = sc.nextInt();
-		/** @see {@Tree @NodeTree} */
 		NodeTree root = null;
 		while (T-- > 0) {
 			int data = sc.nextInt();
 			root = Tree.insert(root, data);
 		}
+		/** @see {@Tree @NodeTree} */
 		int height = Tree.getHeight(root);
 		System.out.println(height);
         sc.close();
+	}
+	
+	
+	/**
+	 * <p>
+	 * Challenge Day 23: BST Level-Order Traversal
+	 * </p>
+	 * 
+	 * @see <a href=
+	 *      "https://www.hackerrank.com/challenges/30-binary-trees/problem">
+	 *      BST Level-Order Traversal</a>
+	 * 
+	 *
+	 * @author clozarr
+	 **/
+	public static void levelOrderTraversal() {
+		
+		  Scanner sc=new Scanner(System.in);
+          int T=sc.nextInt();
+          NodeTree root=null;
+          while(T-->0){
+              int data=sc.nextInt();
+              root= Tree.insert(root,data);
+          }
+          /** @see {@Tree @NodeTree} */
+          Tree.levelOrder(root);
+          sc.close();
 	}
 
 }
