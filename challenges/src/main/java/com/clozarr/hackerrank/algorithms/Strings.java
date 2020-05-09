@@ -47,6 +47,52 @@ public class Strings {
 		return (countOdd <= 1) ? "YES" : "NO";
 
 	}
+	
+	public static int determinigDNAHealth(String[] genes, int[] health, String d, int first, int last) {
+
+		String g = "";
+		int h = 0;
+		int sum = 0;
+
+		Map<String, Integer> healtyGenes = new HashMap<>();
+
+		for (int i = first; i <= last; i++) {
+
+			g = genes[i];
+			h = health[i];
+
+			
+			if (!healtyGenes.containsKey(g))
+				healtyGenes.put(g, h);
+			else
+				healtyGenes.put(g, healtyGenes.get(g) + h);
+		}
+
+		int ocurrences = 0;
+	
+
+		for (Entry<String, Integer> e : healtyGenes.entrySet()) {
+
+			if (d.indexOf(e.getKey()) != -1) {
+
+			
+
+				ocurrences = d.split(e.getKey(),-1).length;
+
+				sum += (ocurrences * e.getValue());
+
+				/*
+				 * System.out.println( "d: " + d + " gene: " + e.getKey() + " value: " +
+				 * e.getValue() + " ocurrences: " + ocurrences);
+				 */
+			}
+
+		}
+
+		return sum;
+
+	}
+
 
 	
 }
