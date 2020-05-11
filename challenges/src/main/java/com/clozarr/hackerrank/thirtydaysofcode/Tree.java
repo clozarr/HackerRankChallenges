@@ -42,23 +42,19 @@ public class Tree {
 		return 1 + Math.max(getHeight(root.left), getHeight(root.right));
 	}
 
-	
-	
-	
 	/**
 	 * <p>
 	 * Challenge Day 23: BST Level-Order Traversal
 	 * </p>
 	 * 
 	 * @see <a href=
-	 *      "https://www.hackerrank.com/challenges/30-binary-trees/problem">
-	 *      BST Level-Order Traversal</a>
+	 *      "https://www.hackerrank.com/challenges/30-binary-trees/problem"> BST
+	 *      Level-Order Traversal</a>
 	 * 
 	 *
 	 * @author clozarr
 	 **/
 	public static void levelOrder(NodeTree root) {
-		// Write your code here
 
 		Queue<NodeTree> queue = new LinkedList<NodeTree>();
 		NodeTree nodeTemp = null;
@@ -77,7 +73,7 @@ public class Tree {
 				queue.add(nodeTemp.right);
 
 		}
-		
+
 		System.out.println(response.trim());
 
 	}

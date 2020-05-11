@@ -3,6 +3,7 @@ package com.clozarr.hackerrank.app;
 import java.util.ArrayList;
 import java.util.List;
 import com.clozarr.hackerrank.datastructures.Arrays;
+import com.clozarr.hackerrank.thirtydaysofcode.Node;
 
 /**
  * Hello world!
@@ -12,7 +13,7 @@ public class App {
 
 	public static void main(String[] args) {
 
-		//printOddAndEven("Rank");
+		// printOddAndEven("Rank");
 
 		/*
 		 * int[] arr = { -4, 3, -9, 0, 4, 1 }; Warmup.plusMinus(arr); int[] r =
@@ -31,10 +32,10 @@ public class App {
 		 * int mayor = Warmup.hourglassSum(array); System.out.println(mayor);
 		 */
 
-		
-		/*Scanner scan = new Scanner(System.in);
-		
-		
+		/*
+		 * Scanner scan = new Scanner(System.in);
+		 * 
+		 * 
 		 * int n = scan.nextInt();
 		 * 
 		 * for (int i = 0; i < n; i++) {
@@ -44,40 +45,46 @@ public class App {
 		 * 
 		 * scan.close();
 		 */
-		
-		
-		List<Integer> a = new ArrayList<Integer>();
-		a.add(1);
-		a.add(0);
-		a.add(5);
-		List<Integer> b = new ArrayList<Integer>();
-		b.add(1);
-		b.add(1);
-		b.add(7);
-		List<Integer> c = new ArrayList<Integer>();
-		c.add(1);
-		c.add(0);
-		c.add(3);
-		List<Integer> d = new ArrayList<Integer>();
-		d.add(2);
-		d.add(1);
-		d.add(0);
-		List<Integer> e = new ArrayList<Integer>();
-		e.add(2);
-		e.add(1);
-		e.add(1);
-		
-		List<List<Integer>> queries = new ArrayList<List<Integer>>();
-		queries.add(a);
-		queries.add(b);
-		queries.add(c);
-		queries.add(d);
-		queries.add(e);
-		
-		List<Integer> r = Arrays.dynamicArray(2, queries);
-		r.stream().forEach(System.out::println);
-		
-	
+
+		/*
+		 * List<Integer> a = new ArrayList<Integer>(); a.add(1); a.add(0); a.add(5);
+		 * List<Integer> b = new ArrayList<Integer>(); b.add(1); b.add(1); b.add(7);
+		 * List<Integer> c = new ArrayList<Integer>(); c.add(1); c.add(0); c.add(3);
+		 * List<Integer> d = new ArrayList<Integer>(); d.add(2); d.add(1); d.add(0);
+		 * List<Integer> e = new ArrayList<Integer>(); e.add(2); e.add(1); e.add(1);
+		 * 
+		 * List<List<Integer>> queries = new ArrayList<List<Integer>>(); queries.add(a);
+		 * queries.add(b); queries.add(c); queries.add(d); queries.add(e);
+		 * 
+		 * List<Integer> r = Arrays.dynamicArray(2, queries);
+		 * r.stream().forEach(System.out::println);
+		 */
+
+		Node head = new Node(3);
+		head = insert(head, 9);
+		head = insert(head, 9);
+		head = insert(head, 11);
+		head = insert(head, 11);
+		head = insert(head, 11);
+		head = insert(head, 11);
+		head = insert(head, 89);
+		head = insert(head, 89);
+		head = insert(head, 100);
+		head = insert(head, 100);
+		head = insert(head, 101);
+		head = insert(head, 102);
+		head = insert(head, 103);
+		head = insert(head, 108);
+		head = insert(head, 200);
+		head = insert(head, 250);
+		head = insert(head, 250);
+		head = insert(head, 250);
+		head = insert(head, 250);
+
+		display(head);
+		System.out.println("\nRemoving duplicates ...");
+		head = removeDuplicates(head);
+		display(head);
 
 	}
 
@@ -95,6 +102,47 @@ public class App {
 
 		System.out.println(even + " " + odd);
 
+	}
+
+	public static Node insert(Node head, int data) {
+		// Complete this method
+
+		Node n = new Node(data);
+		if (head == null)
+			head = n;
+		else {
+			Node start = head;
+			while (start.next != null) {
+				start = start.next;
+			}
+			start.next = n;
+		}
+
+		return head;
+	}
+
+	public static void display(Node head) {
+		Node start = head;
+		while (start != null) {
+			System.out.print(start.data + " ");
+			start = start.next;
+		}
+	}
+
+	public static Node removeDuplicates(Node head) {
+		// Write your code here
+
+		Node iterator = head;
+
+		while (iterator.next != null) {
+
+			if (iterator.data == iterator.next.data)
+				iterator.next = iterator.next.next;
+			else
+				iterator = iterator.next;
+		}
+
+		return head;
 	}
 
 }

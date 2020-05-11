@@ -676,11 +676,12 @@ public class ThirtyDaysOfCode {
 
 	/**
 	 * <p>
-	 * Challenge Day 22:  Binary Search Trees
+	 * Challenge Day 22: Binary Search Trees
 	 * </p>
 	 * 
-	 * @see <a href= "https://www.hackerrank.com/challenges/30-binary-search-trees/problem">
-	 *       Binary Search Trees</a>
+	 * @see <a href=
+	 *      "https://www.hackerrank.com/challenges/30-binary-search-trees/problem">
+	 *      Binary Search Trees</a>
 	 * 
 	 *
 	 * @author clozarr
@@ -697,34 +698,58 @@ public class ThirtyDaysOfCode {
 		/** @see {@Tree @NodeTree} */
 		int height = Tree.getHeight(root);
 		System.out.println(height);
-        sc.close();
+		sc.close();
 	}
-	
-	
+
 	/**
 	 * <p>
 	 * Challenge Day 23: BST Level-Order Traversal
 	 * </p>
 	 * 
 	 * @see <a href=
-	 *      "https://www.hackerrank.com/challenges/30-binary-trees/problem">
-	 *      BST Level-Order Traversal</a>
+	 *      "https://www.hackerrank.com/challenges/30-binary-trees/problem"> BST
+	 *      Level-Order Traversal</a>
 	 * 
 	 *
 	 * @author clozarr
 	 **/
-	public static void levelOrderTraversal() {
-		
-		  Scanner sc=new Scanner(System.in);
-          int T=sc.nextInt();
-          NodeTree root=null;
-          while(T-->0){
-              int data=sc.nextInt();
-              root= Tree.insert(root,data);
-          }
-          /** @see {@Tree @NodeTree} */
-          Tree.levelOrder(root);
-          sc.close();
+	public static void treeLevelOrderTraversal() {
+
+		Scanner sc = new Scanner(System.in);
+		int T = sc.nextInt();
+		NodeTree root = null;
+		while (T-- > 0) {
+			int data = sc.nextInt();
+			root = Tree.insert(root, data);
+		}
+		Tree.levelOrder(root);
+
 	}
 
+	/**
+	 * <p>
+	 * Challenge Day 24: More Linked List
+	 * </p>
+	 * 
+	 * @see <a href=
+	 *      "https://www.hackerrank.com/challenges/30-linked-list-deletion/problem">
+	 *      More Linked List</a>
+	 * 
+	 * @author clozarr
+	 **/
+	public static void moreLinkedList() {
+
+		Scanner sc = new Scanner(System.in);
+		Node head = null;
+		int T = sc.nextInt();
+		while (T-- > 0) {
+			int ele = sc.nextInt();
+			head = Solution.insert(head, ele);
+		}
+		head = Solution.removeDuplicates(head);
+		Solution.display(head);
+		sc.close();
+	}
+	
+	
 }
