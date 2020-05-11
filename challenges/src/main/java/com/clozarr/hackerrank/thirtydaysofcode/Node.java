@@ -1,22 +1,21 @@
 package com.clozarr.hackerrank.thirtydaysofcode;
 
-
 /**
-* <p>
-* Challenge Day 15: Linked List
-* </p>
-* 
-* @see <a href= "https://www.hackerrank.com/challenges/30-linked-list/problem">
-*      Linked List</a>
-*      
-* @author clozarr
-**/
-class Node {
+ * <p>
+ * Challenge Day 15: Linked List
+ * </p>
+ * 
+ * @see <a href= "https://www.hackerrank.com/challenges/30-linked-list/problem">
+ *      Linked List</a>
+ * 
+ * @author clozarr
+ **/
+public class Node {
 
-	int data;
-	Node next;
+	public int data;
+	public Node next;
 
-	Node(int d) {
+	public Node(int d) {
 		data = d;
 		next = null;
 	}
@@ -36,6 +35,33 @@ class Solution {
 				start = start.next;
 			}
 			start.next = n;
+		}
+
+		return head;
+	}
+
+	
+	/**
+	 * <p>
+	 * Challenge Day 24: More Linked List
+	 * </p>
+	 * 
+	 * @see <a href= "https://www.hackerrank.com/challenges/30-linked-list-deletion/problem">
+	 *      More Linked List</a>
+	 * 
+	 * @author clozarr
+	 **/
+	public static Node removeDuplicates(Node head) {
+		// Write your code here
+
+		Node iterator = head;
+
+		while (iterator.next != null) {
+
+			if (iterator.data == iterator.next.data)
+				iterator.next = iterator.next.next;
+			else
+				iterator = iterator.next;
 		}
 
 		return head;
