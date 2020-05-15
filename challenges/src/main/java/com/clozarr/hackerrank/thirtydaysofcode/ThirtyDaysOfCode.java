@@ -1,5 +1,6 @@
 package com.clozarr.hackerrank.thirtydaysofcode;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -750,6 +751,122 @@ public class ThirtyDaysOfCode {
 		Solution.display(head);
 		sc.close();
 	}
-	
-	
+
+	/**
+	 * <p>
+	 * Challenge Day 25: Running Time and Complexity
+	 * </p>
+	 * 
+	 * @see <a href=
+	 *      "https://www.hackerrank.com/challenges/30-running-time-and-complexity/problem">
+	 *      Running Time and Complexity</a>
+	 * 
+	 * @author clozarr
+	 **/
+
+	public static void runningTimeAndComplexity() {
+
+		Scanner scanner = new Scanner(System.in);
+		int t = scanner.nextInt();
+		for (int i = 0; i < t; i++) {
+			int n = scanner.nextInt();
+
+			boolean response = isPrime(n);
+			System.out.println(response ? "Prime" : "Not prime");
+		}
+		scanner.close();
+
+	}
+
+	private static boolean isPrime(int n) {
+
+		if (n == 2)
+			return true;
+		if (n == 1 || n % 2 == 0)
+			return false;
+
+		for (int i = 3; i <= Math.sqrt(n); i += 2) {
+
+			if (n % i == 0)
+				return false;
+		}
+
+		return true;
+	}
+
+	/**
+	 * <p>
+	 * Challenge Day 26: Nested Logic
+	 * </p>
+	 * 
+	 * @see <a href=
+	 *      "https://www.hackerrank.com/challenges/30-nested-logic/problem"> Nested
+	 *      Logic</a>
+	 * 
+	 * @author clozarr
+	 **/
+	public static void nestedLogic() {
+
+		Scanner scanner = new Scanner(System.in);
+		String actualDate = scanner.nextLine();
+		String expectedDate = scanner.nextLine();
+		System.out.println(calculate(actualDate, expectedDate));
+		scanner.close();
+		
+		
+	}
+
+	public static int calculate(String actualDate, String expectedDate) {
+		int fine = 0;
+
+		String[] actual = actualDate.split(" ");
+		String[] expected = expectedDate.split(" ");
+
+		// Actual date
+		int actualDay = Integer.parseInt(actual[0]);
+		int actualMonth = Integer.parseInt(actual[1]);
+		int actualYear = Integer.parseInt(actual[2]);
+
+		// Expected date
+		int expectedDay = Integer.parseInt(expected[0]);
+		int expectedMonth = Integer.parseInt(expected[1]);
+		int expectedYear = Integer.parseInt(expected[2]);
+
+		/*
+		 * Case 1: the book is returned on or before the expected return date, no fine
+		 * will be charged. fine = 0;
+		 */
+		if (actualYear < expectedYear)
+			fine = 0;
+		else if(actualYear == expectedYear && actualMonth < expectedMonth)
+			fine = 0;
+		else if(actualYear == expectedYear && actualMonth == expectedMonth && actualDay <= expectedDay)  
+			fine = 0;
+		/*
+		 * Case 2: the book is returned after the expected return day but still within
+		 * the same calendar month and year as the expected return date, fine = 15 x
+		 * (the number of days later)
+		 */
+		else if (actualDay > expectedDay && actualMonth <= expectedMonth && actualYear <= expectedYear)
+			fine = 15 * (actualDay - expectedDay);
+
+		/*
+		 * Case 3: If the book is returned after the expected return month but still
+		 * within the same calendar year as the expected return date, fine = 500 x (the
+		 * number of months late)
+		 */
+		else if (actualMonth > expectedMonth && actualYear <= expectedYear)
+			fine = 500 * (actualMonth - expectedMonth);
+
+		/*
+		 * Case 4: the book is returned after the calendar year in which it was
+		 * expected, there is a fixed of fine = 10000
+		 */
+		else if (actualYear > expectedYear)
+			fine = 10000;
+		
+		
+		return fine;
+	}
+
 }

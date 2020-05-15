@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import com.clozarr.hackerrank.datastructures.Arrays;
 import com.clozarr.hackerrank.thirtydaysofcode.Node;
+import com.clozarr.hackerrank.thirtydaysofcode.ThirtyDaysOfCode;
 
 /**
  * Hello world!
@@ -60,31 +61,21 @@ public class App {
 		 * r.stream().forEach(System.out::println);
 		 */
 
-		Node head = new Node(3);
-		head = insert(head, 9);
-		head = insert(head, 9);
-		head = insert(head, 11);
-		head = insert(head, 11);
-		head = insert(head, 11);
-		head = insert(head, 11);
-		head = insert(head, 89);
-		head = insert(head, 89);
-		head = insert(head, 100);
-		head = insert(head, 100);
-		head = insert(head, 101);
-		head = insert(head, 102);
-		head = insert(head, 103);
-		head = insert(head, 108);
-		head = insert(head, 200);
-		head = insert(head, 250);
-		head = insert(head, 250);
-		head = insert(head, 250);
-		head = insert(head, 250);
-
-		display(head);
-		System.out.println("\nRemoving duplicates ...");
-		head = removeDuplicates(head);
-		display(head);
+		/*
+		 * Node head = new Node(3); head = insert(head, 9); head = insert(head, 9); head
+		 * = insert(head, 11); head = insert(head, 11); head = insert(head, 11); head =
+		 * insert(head, 11); head = insert(head, 89); head = insert(head, 89); head =
+		 * insert(head, 100); head = insert(head, 100); head = insert(head, 101); head =
+		 * insert(head, 102); head = insert(head, 103); head = insert(head, 108); head =
+		 * insert(head, 200); head = insert(head, 250); head = insert(head, 250); head =
+		 * insert(head, 250); head = insert(head, 250);
+		 * 
+		 * display(head); System.out.println("\nRemoving duplicates ..."); head =
+		 * removeDuplicates(head); display(head);
+		 */
+		
+		int r = ThirtyDaysOfCode.calculate("31 12 2009","1 1 2010");
+		System.out.println("Respuesta es: " + r);
 
 	}
 
