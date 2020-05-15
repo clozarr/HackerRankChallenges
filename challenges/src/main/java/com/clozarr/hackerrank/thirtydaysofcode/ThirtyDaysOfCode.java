@@ -1,6 +1,5 @@
 package com.clozarr.hackerrank.thirtydaysofcode;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -724,7 +723,7 @@ public class ThirtyDaysOfCode {
 			root = Tree.insert(root, data);
 		}
 		Tree.levelOrder(root);
-
+       sc.close();
 	}
 
 	/**
@@ -868,5 +867,21 @@ public class ThirtyDaysOfCode {
 		
 		return fine;
 	}
-
+	
+	/**
+	 * <p>
+	 * Challenge Day 27: Testing
+	 * </p>
+	 * 
+	 * @see <a href=
+	 *      "https://www.hackerrank.com/challenges/30-testing/problem?"> Testing
+	 *      </a>
+	 * 
+	 * @author clozarr
+	 **/
+   public static void testing() {
+	   
+	   /*@see SolutionTesting */
+	   System.out.println("See class SolutionTesting");
+   }
 }
