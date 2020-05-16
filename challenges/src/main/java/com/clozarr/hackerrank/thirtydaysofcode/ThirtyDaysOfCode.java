@@ -1,10 +1,13 @@
 package com.clozarr.hackerrank.thirtydaysofcode;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ThirtyDaysOfCode {
 
@@ -723,7 +726,7 @@ public class ThirtyDaysOfCode {
 			root = Tree.insert(root, data);
 		}
 		Tree.levelOrder(root);
-       sc.close();
+		sc.close();
 	}
 
 	/**
@@ -811,8 +814,7 @@ public class ThirtyDaysOfCode {
 		String expectedDate = scanner.nextLine();
 		System.out.println(calculate(actualDate, expectedDate));
 		scanner.close();
-		
-		
+
 	}
 
 	public static int calculate(String actualDate, String expectedDate) {
@@ -837,9 +839,9 @@ public class ThirtyDaysOfCode {
 		 */
 		if (actualYear < expectedYear)
 			fine = 0;
-		else if(actualYear == expectedYear && actualMonth < expectedMonth)
+		else if (actualYear == expectedYear && actualMonth < expectedMonth)
 			fine = 0;
-		else if(actualYear == expectedYear && actualMonth == expectedMonth && actualDay <= expectedDay)  
+		else if (actualYear == expectedYear && actualMonth == expectedMonth && actualDay <= expectedDay)
 			fine = 0;
 		/*
 		 * Case 2: the book is returned after the expected return day but still within
@@ -863,25 +865,112 @@ public class ThirtyDaysOfCode {
 		 */
 		else if (actualYear > expectedYear)
 			fine = 10000;
-		
-		
+
 		return fine;
 	}
-	
+
 	/**
 	 * <p>
 	 * Challenge Day 27: Testing
 	 * </p>
 	 * 
-	 * @see <a href=
-	 *      "https://www.hackerrank.com/challenges/30-testing/problem?"> Testing
-	 *      </a>
+	 * @see <a href= "https://www.hackerrank.com/challenges/30-testing/problem">
+	 *      Testing </a>
 	 * 
 	 * @author clozarr
 	 **/
-   public static void testing() {
-	   
-	   /*@see SolutionTesting */
-	   System.out.println("See class SolutionTesting");
-   }
+	public static void testing() {
+
+		/* @see SolutionTesting */
+		System.out.println("See class SolutionTesting");
+	}
+
+	/**
+	 * <p>
+	 * Challenge Day 28: RegEx, Patterns, and Intro to Databases
+	 * </p>
+	 * 
+	 * @see <a href=
+	 *      "https://www.hackerrank.com/challenges/30-regex-patterns/problem">
+	 *      RegEx, Patterns, and Intro to Databases </a>
+	 * 
+	 * @author clozarr
+	 **/
+	public static void regExAndPattenrs() {
+
+		Scanner scanner = new Scanner(System.in);
+
+		int N = scanner.nextInt();
+		scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+		Pattern patron = Pattern.compile("@gmail.com");
+		List<String> names = new ArrayList<>();
+
+		for (int NItr = 0; NItr < N; NItr++) {
+			String[] firstNameEmailID = scanner.nextLine().split(" ");
+
+			String firstName = firstNameEmailID[0];
+
+			String emailID = firstNameEmailID[1];
+			Matcher matcher = patron.matcher(emailID);
+			if (matcher.find())
+				names.add(firstName);
+
+		}
+		names.stream().sorted().forEach(System.out::println);
+
+		scanner.close();
+
+	}
+
+	/**
+	 * <p>
+	 * Challenge Day 29: Bitwise AND
+	 * </p>
+	 * 
+	 * @see <a href=
+	 *      "https://www.hackerrank.com/challenges/30-bitwise-and/problem">
+	 *      Bitwise AND </a>
+	 * 
+	 * @author clozarr
+	 **/
+	public static void bitWiseAnd() {
+
+		Scanner scanner = new Scanner(System.in);
+		int t = scanner.nextInt();
+		scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+		int bitwise = 0;
+		int maximun = 0;
+
+		for (int tItr = 0; tItr < t; tItr++) {
+			String[] nk = scanner.nextLine().split(" ");
+
+			int n = Integer.parseInt(nk[0]);
+			int k = Integer.parseInt(nk[1]);
+			maximun = Integer.MIN_VALUE;
+
+			for (int i = 1; i < n; i++) {
+
+				for (int j = (i + 1); j <= n; j++) {
+
+					bitwise = (i & j);
+
+					if (bitwise < k) {
+
+						if (bitwise > maximun)
+							maximun = bitwise;
+
+					}
+
+				}
+			}
+
+			System.out.println(maximun);
+		}
+
+		scanner.close();
+
+	}
+
 }

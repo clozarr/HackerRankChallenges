@@ -74,8 +74,13 @@ public class App {
 		 * removeDuplicates(head); display(head);
 		 */
 		
-		int r = ThirtyDaysOfCode.calculate("31 12 2009","1 1 2010");
-		System.out.println("Respuesta es: " + r);
+		/*
+		 * int r = ThirtyDaysOfCode.calculate("31 12 2009","1 1 2010");
+		 * System.out.println("Respuesta es: " + r);
+		 */
+		
+		ThirtyDaysOfCode.bitWiseAnd();
+		
 
 	}
 
