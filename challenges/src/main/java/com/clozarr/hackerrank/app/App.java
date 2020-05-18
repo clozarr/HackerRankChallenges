@@ -2,6 +2,8 @@ package com.clozarr.hackerrank.app;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.clozarr.hackerrank.algorithms.Warmup;
 import com.clozarr.hackerrank.datastructures.Arrays;
 import com.clozarr.hackerrank.thirtydaysofcode.Node;
 import com.clozarr.hackerrank.thirtydaysofcode.ThirtyDaysOfCode;
@@ -16,6 +18,7 @@ public class App {
 
 		// printOddAndEven("Rank");
 
+		Warmup.staircase(6);
 		/*
 		 * int[] arr = { -4, 3, -9, 0, 4, 1 }; Warmup.plusMinus(arr); int[] r =
 		 * Warmup.reverseArray(arr);
@@ -79,7 +82,7 @@ public class App {
 		 * System.out.println("Respuesta es: " + r);
 		 */
 		
-		ThirtyDaysOfCode.bitWiseAnd();
+		//ThirtyDaysOfCode.bitWiseAnd();
 		
 
 	}

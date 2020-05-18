@@ -1,8 +1,7 @@
 package com.clozarr.hackerrank.algorithms;
+
 import java.util.LinkedList;
 import java.util.List;
-
-
 
 /**
  * 
@@ -15,14 +14,15 @@ public class Warmup {
 	 * </p>
 	 * 
 	 * @see <a href=
-	 *      "https://www.hackerrank.com/challenges/solve-me-first/problem">Solve Me First</a>
+	 *      "https://www.hackerrank.com/challenges/solve-me-first/problem">Solve Me
+	 *      First</a>
 	 * @author clozarr
 	 **/
 	public static int solveMeFirst(int a, int b) {
-      	// Hint: Type return a+b; below 
-      return a + b;
-   }
-	
+		// Hint: Type return a+b; below
+		return a + b;
+	}
+
 	/**
 	 * <p>
 	 * Challenge: Simple Array Sum
@@ -178,5 +178,37 @@ public class Warmup {
 		System.out.println(String.format("%.6f", negativepercent));
 		System.out.println(String.format("%.6f", zerosPercent));
 	}
-	
+
+	/**
+	 * <p>
+	 * Challenge: Staircase
+	 * </p>
+	 * 
+	 * @see <a href=
+	 *      "https://www.hackerrank.com/challenges/staircase/problem">Staircase
+	 *      </a>
+	 * @author clozarr
+	 **/
+	public static void staircase(int n) {
+
+		StringBuilder output = new StringBuilder();
+		int counter = 0;
+
+		for (int i = 1; i <= n; i++) {
+
+			while (counter++ < n) {
+
+				if (counter <= n - i)
+					output.append(" ");
+				else
+					output.append("#");
+			}
+
+			System.out.println(output.toString());
+			counter = 0;
+			output.setLength(0);
+		}
+
+	}
+
 }
