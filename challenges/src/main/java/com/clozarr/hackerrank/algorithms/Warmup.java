@@ -1,7 +1,9 @@
 package com.clozarr.hackerrank.algorithms;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 
@@ -185,8 +187,7 @@ public class Warmup {
 	 * </p>
 	 * 
 	 * @see <a href=
-	 *      "https://www.hackerrank.com/challenges/staircase/problem">Staircase
-	 *      </a>
+	 *      "https://www.hackerrank.com/challenges/staircase/problem">Staircase </a>
 	 * @author clozarr
 	 **/
 	public static void staircase(int n) {
@@ -210,5 +211,38 @@ public class Warmup {
 		}
 
 	}
+
+	/**
+	 * <p>
+	 * Challenge: Birthday Cake Candles
+	 * </p>
+	 * 
+	 * @see <a href=
+	 *      "https://www.hackerrank.com/challenges/birthday-cake-candles/problem">Birthday Cake Candles </a>
+	 * @author clozarr
+	 **/
+	public static int birthdayCakeCandles(int[] ar) {
+
+		int biggerHeight = Integer.MIN_VALUE;
+		Map<Integer, Integer> heigthCounter = new HashMap<Integer, Integer>();
+		int height = 0;
+
+		for (int i = 0; i < ar.length; i++) {
+
+			height = ar[i];
+
+			if (height > biggerHeight)
+				biggerHeight = height;
+
+			
+			if (!heigthCounter.containsKey(height))
+				heigthCounter.put(height, 1);
+			else
+				heigthCounter.put(height, heigthCounter.get(height) + 1);
+		}
+		
+		return heigthCounter.get(biggerHeight);
+
+	} 
 
 }

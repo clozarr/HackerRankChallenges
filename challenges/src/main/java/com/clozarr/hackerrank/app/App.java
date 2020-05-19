@@ -18,7 +18,10 @@ public class App {
 
 		// printOddAndEven("Rank");
 
-		Warmup.staircase(6);
+		int m = Warmup.birthdayCakeCandles(new int [] {3,2,1,3});
+		System.out.println("Respuesta: " + m);
+		
+		
 		/*
 		 * int[] arr = { -4, 3, -9, 0, 4, 1 }; Warmup.plusMinus(arr); int[] r =
 		 * Warmup.reverseArray(arr);
