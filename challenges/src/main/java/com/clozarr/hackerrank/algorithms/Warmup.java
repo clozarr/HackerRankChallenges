@@ -218,7 +218,8 @@ public class Warmup {
 	 * </p>
 	 * 
 	 * @see <a href=
-	 *      "https://www.hackerrank.com/challenges/birthday-cake-candles/problem">Birthday Cake Candles </a>
+	 *      "https://www.hackerrank.com/challenges/birthday-cake-candles/problem">Birthday
+	 *      Cake Candles </a>
 	 * @author clozarr
 	 **/
 	public static int birthdayCakeCandles(int[] ar) {
@@ -234,15 +235,50 @@ public class Warmup {
 			if (height > biggerHeight)
 				biggerHeight = height;
 
-			
 			if (!heigthCounter.containsKey(height))
 				heigthCounter.put(height, 1);
 			else
 				heigthCounter.put(height, heigthCounter.get(height) + 1);
 		}
-		
+
 		return heigthCounter.get(biggerHeight);
 
-	} 
+	}
+
+	/**
+	 * <p>
+	 * Challenge: Time Conversion
+	 * </p>
+	 * 
+	 * @see <a href=
+	 *      "https://www.hackerrank.com/challenges/time-conversion/problem">
+	 *       Time Conversion </a>
+	 * @author clozarr
+	 **/
+	public static String timeConversion(String s) {
+
+		String[] timeInput = s.split(":");
+		String ampm = timeInput[2].substring(2);
+		String output = "";
+		String newHh = timeInput[0];
+
+		if (ampm.equals("AM")) {
+			if (newHh.equals("12"))
+				newHh = "00";
+
+		} else {
+
+			int hh = Integer.parseInt(timeInput[0]);
+
+			if (hh != 12)
+				hh += 12;
+
+			newHh = String.valueOf(hh);
+
+		}
+		output = newHh + ":" + timeInput[1] + ":" + timeInput[2].substring(0, 2);
+		return output;
+
+	}
 
 }

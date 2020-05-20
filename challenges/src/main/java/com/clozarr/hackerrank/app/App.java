@@ -21,6 +21,9 @@ public class App {
 		int m = Warmup.birthdayCakeCandles(new int [] {3,2,1,3});
 		System.out.println("Respuesta: " + m);
 		
+		//System.out.println("12:05:45PM".substring(0,8));
+		System.out.println(Warmup.timeConversion("00:40:22AM"));
+		
 		
 		/*
 		 * int[] arr = { -4, 3, -9, 0, 4, 1 }; Warmup.plusMinus(arr); int[] r =
