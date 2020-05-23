@@ -1,5 +1,6 @@
 package com.clozarr.hackerrank.algorithms;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -251,8 +252,8 @@ public class Warmup {
 	 * </p>
 	 * 
 	 * @see <a href=
-	 *      "https://www.hackerrank.com/challenges/time-conversion/problem">
-	 *       Time Conversion </a>
+	 *      "https://www.hackerrank.com/challenges/time-conversion/problem"> Time
+	 *      Conversion </a>
 	 * @author clozarr
 	 **/
 	public static String timeConversion(String s) {
@@ -279,6 +280,33 @@ public class Warmup {
 		output = newHh + ":" + timeInput[1] + ":" + timeInput[2].substring(0, 2);
 		return output;
 
+	}
+
+	/**
+	 * <p>
+	 * Challenge: Mini-Max Sum
+	 * </p>
+	 * 
+	 * @see <a href= "https://www.hackerrank.com/challenges/mini-max-sum/problem">
+	 *      Mini-Max Sum </a>
+	 * @author clozarr
+	 **/
+	public static void miniMaxSum(int[] arr) {
+
+		long min = 0L;
+		long max = 0L;
+		Arrays.sort(arr);
+
+		for (int i = 0; i < arr.length; i++) {
+
+			if (i < arr.length - 1)
+				min += arr[i];
+			if (i >= 1)
+				max += arr[i];
+
+		}
+
+		System.out.println(min + " " + max);
 	}
 
 }
