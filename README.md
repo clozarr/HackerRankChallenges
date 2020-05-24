@@ -1,2 +1,2 @@
 # HackerRankChallenges
-Repositorio para almacenar las soluciones de los diferentes retos HackerRank
+This repository contains solutions to hackerrank challengesk
