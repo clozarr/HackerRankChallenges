@@ -1,5 +1,9 @@
 package com.clozarr.hackerrank.algorithms;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 public class Implementation {
 
 	/**
@@ -15,7 +19,7 @@ public class Implementation {
 	 **/
 	public static void countApplesAndOranges(int s, int t, int a, int b, int[] apples, int[] oranges) {
 
-		//Apples
+		// Apples
 		int appleSum = 0;
 		int appleCount = 0;
 		for (int apple : apples) {
@@ -25,7 +29,7 @@ public class Implementation {
 				appleCount++;
 			appleSum = 0;
 		}
-		//Oranges
+		// Oranges
 		int orangeSum = 0;
 		int orangeCount = 0;
 		for (int orange : oranges) {
@@ -36,5 +40,41 @@ public class Implementation {
 		}
 		System.out.println(appleCount + "\n" + orangeCount);
 
+	}
+
+	/**
+	 * <p>
+	 * Challenge: Grading Students
+	 * </p>
+	 * 
+	 * @see <a href= "https://www.hackerrank.com/challenges/grading/problem">Grading
+	 *      Students </a>
+	 * 
+	 * @author clozarr
+	 **/
+	public static List<Integer> gradingStudents(List<Integer> grades) {
+		// Write your code here
+		int multiple = 0;
+
+		List<Integer> finalGrades = new ArrayList<Integer>();
+
+		for (int grade : grades) {
+			multiple = grade;
+			if (grade >= 38) {
+				while (++multiple % 5 != 0)
+					;
+
+				if (multiple - grade < 3)
+					finalGrades.add(multiple);
+				else
+					finalGrades.add(grade);
+
+			} else {
+				finalGrades.add(grade);
+			}
+
+		}
+
+		return finalGrades;
 	}
 }
