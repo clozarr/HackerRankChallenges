@@ -76,4 +76,25 @@ public class Implementation {
 
 		return finalGrades;
 	}
+
+	/**
+	 * <p>
+	 * Challenge: Between Two Sets
+	 * </p>
+	 * 
+	 * @see <a href=
+	 *      "https://www.hackerrank.com/challenges/between-two-sets/problem">Between
+	 *      Two Sets </a>
+	 * 
+	 * @author clozarr
+	 **/
+	public static int getTotalX(List<Integer> a, List<Integer> b) {
+
+		int totalX = 0;
+
+		
+
+		return totalX;
+
+	}
 }
